@@ -35,10 +35,10 @@ const NavContent = ({ styles }: Props) => {
                     <NavigationMenuContent >
                         <div className="w-[350px] p-4 bg-white flex flex-col space-y-5">
                             <Link href="/ssalon" className="cursor-pointer hover:text-pink-300">Salon</Link>
-                            <Link href="/" className="cursor-pointer hover:text-pink-300">Les organisateurs</Link>
-                            <Link href="/" className="cursor-pointer hover:text-pink-300">Retour sur les édition précédantes</Link>
-                            <Link href="/" className="cursor-pointer hover:text-pink-300">Les exposants</Link>
-                            <Link href="/" className="cursor-pointer hover:text-pink-300">Informations pratiques</Link>
+                            <Link href="/organisateurs" className="cursor-pointer hover:text-pink-300">Les organisateurs</Link>
+                            <Link href="/edition-precedent" className="cursor-pointer hover:text-pink-300">Retour sur les édition précédantes</Link>
+                            <Link href="/exposants" className="cursor-pointer hover:text-pink-300">Les exposants</Link>
+                            <Link href="/info" className="cursor-pointer hover:text-pink-300">Informations pratiques</Link>
 
                         </div>
                     </NavigationMenuContent>
@@ -52,8 +52,8 @@ const NavContent = ({ styles }: Props) => {
                     <NavigationMenuContent className="  w-[350px] p-4 bg-white flex flex-col space-y-5">
 
                         <div className="w-[300px] p-4 bg-white flex flex-col space-y-5">
-                            <Link href="/" className="cursor-pointer hover:text-pink-300">Pourquoi devenir partenaire</Link>
-                            <Link href="/" className="cursor-pointer hover:text-pink-300">Les offres</Link>
+                            <Link href="/partenaire" className="cursor-pointer hover:text-pink-300">Pourquoi devenir partenaire</Link>
+                            <Link href="/offre" className="cursor-pointer hover:text-pink-300">Les offres</Link>
 
                         </div>
                     </NavigationMenuContent>

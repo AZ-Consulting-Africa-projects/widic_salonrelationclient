@@ -18,9 +18,9 @@ import NavContentSm from "./NavContentSm";
 
 const Navbar = () => {
     return (
-        <div className="fixed top-0 w-full bg-stone-900 h-20 flex space-x-10 items-center justify-center">
+        <div className="fixed top-0 w-full bg-stone-900 h-20 flex space-x-10 items-center  justify-center">
 
-            <Link href="/" className="md:hidden flex self-start w-autoxt-white">ACCEUIL</Link>
+            <Link href="/" className="md:hidden flex ml-5 items-center self-center w-auto text-white font-medium">ACCEUIL</Link>
 
             <div className='md:hidden w-full flex pr-5 items-end justify-end'>
                 <Sheet>

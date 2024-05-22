@@ -53,23 +53,23 @@ const HomeSection3 = () => {
             {/** rest of day */}
             <div className="w-full flex space-x-1 md:space-x-8 items-center justify-center">
                 <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-500 flex flex-col items-center justify-center  ">
-                    <h1 className="md:text-6xl font-bold">{timeLeft.days}</h1>
-                    <h1 className="text-gray-500 text-[12px] md:text-xl">Jours</h1>
+                    <div className="md:text-6xl font-bold">{timeLeft.days}</div>
+                    <div className="text-gray-500 text-[12px] md:text-xl">Jours</div>
                 </div>
 
                 <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-500 flex flex-col items-center justify-center  ">
-                    <h1 className="md:text-6xl font-bold">{timeLeft.hours}</h1>
-                    <h1 className="text-gray-500 text-[12px] md:text-xl">Heures</h1>
+                    <div className="md:text-6xl font-bold">{timeLeft.hours}</div>
+                    <div className="text-gray-500 text-[12px] md:text-xl">Heures</div>
                 </div>
 
                 <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-500 flex flex-col items-center justify-center  ">
-                    <h1 className="md:text-6xl font-bold">{timeLeft.minutes}</h1>
-                    <h1 className="text-gray-500 text-[12px] md:text-xl">Minutes</h1>
+                    <div className="md:text-6xl font-bold">{timeLeft.minutes}</div>
+                    <div className="text-gray-500 text-[12px] md:text-xl">Minutes</div>
                 </div>
 
                 <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-500 flex flex-col items-center justify-center  ">
-                    <h1 className="md:text-6xl font-bold">{timeLeft.seconds}</h1>
-                    <h1 className="text-gray-500 text-[12px] md:text-xl">Secondes</h1>
+                    <div className="md:text-6xl font-bold">{timeLeft.seconds}</div>
+                    <div className="text-gray-500 text-[12px] md:text-xl">Secondes</div>
                 </div>
             </div>
             <Separator  className="flex md:hidden w-full "/>
