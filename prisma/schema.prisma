@@ -1,0 +1,119 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("SALON_BD")
+  relationMode = "prisma"
+}
+
+model User {
+  id          Int        @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  email       String
+  password    String?
+  profilUrl   String
+  phone       Int
+  role        RoleType
+  isVisible   Boolean    @default(true)
+  isActivated Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  provider    Provider[]
+  sponsors    Sponsor[]
+}
+
+model Provider {
+  id           Int          @id @default(autoincrement())
+  fonction     String
+  providerType ProviderType @default(PANELIST)
+  userId       Int
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  user         User         @relation(fields: [userId], references: [id])
+  sheduler     Sheduler[]
+}
+
+model Sponsor {
+  id               Int      @id @default(autoincrement())
+  userId           Int
+  organisationName String
+  description      String
+  logoUrl          String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  user             User     @relation(fields: [userId], references: [id])
+}
+
+model Paiement {
+  id        Int            @id @default(autoincrement())
+  userId    Int
+  amount    Float
+  status    PaiementStatus 
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+}
+
+model Ticket {
+  id          Int      @id @default(autoincrement())
+  price       Float
+  type        String
+  isActivated Boolean  @default(true)
+  isVisible   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Event {
+  id          Int         @id @default(autoincrement())
+  title       String
+  description String
+  beginDate   DateTime
+  enddate     DateTime
+  imagesUrl   String[]
+  status      EventStatus
+  isActivated Boolean     @default(true)
+  isVisible   Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  sheduler    Sheduler[]
+}
+
+model Sheduler {
+  id         Int      @id @default(autoincrement())
+  dayRang    String
+  providerId Int
+  date       DateTime
+  beginTime  DateTime
+  endTime    DateTime
+  eventId    Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  provider   Provider @relation(fields: [providerId], references: [id])
+  event      Event    @relation(fields: [eventId], references: [id])
+}
+
+enum EventStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum PaiementStatus {
+  TICKETPAID
+  SPONSORPAID
+}
+
+enum ProviderType {
+  PANELIST
+  PRESTATAIR
+}
+
+enum RoleType {
+  ADMIN
+  USER
+  PANELIST
+  SPONSOR
+}

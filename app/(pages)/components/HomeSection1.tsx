@@ -2,27 +2,31 @@
 import { Button } from "@/components/ui/button";
 import { User, ArrowRight, ArrowDown } from "lucide-react";
 import { useRouter } from "next/navigation"
+import GrandianButton from "./GradianButton";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/variante";
 
 
 const HomeSection1 = () => {
     const router = useRouter()
     return (
-        <section className="flex flex-col items-center space-y-4 justify-center md:h-screen h-[600px]  text-white bg-[#86286A]  ">
+        <motion.section
+        variants={fadeIn('up', 0.5)}
+        initial='hidden'
+        animate='show'
+        className="flex flex-col items-center space-y-4 justify-center md:h-screen h-[600px]  text-white bg-[#868028]  ">
             <h1 className="text-xl font-extrabold">09 Août 2024</h1>
-            <h1 className="md:text-8xl text-3xl font-bold text-center ">Structurez, développez </h1>
-            <h1 className="md:text-8xl text-3xl font-bold text-center ">et optimisez votre </h1>
-            <h1 className="md:text-8xl text-3xl font-bold text-center "> relation client</h1>
+            <h1 className="md:text-7xl text-3xl font-bold text-center ">Salon de la relation </h1>
+            <h1 className="md:text-6xl text-3xl font-bold text-center ">Client </h1>
+            <h1 className="md:text-8xl text-3xl font-bold text-center "> </h1>
             <div className="flex items-center space-x-3">
                 <User className="w-[20px] h-[20px]" />
-                <h1 className="text-11 font-bold">Cité des Congrès de Nantes</h1>
             </div>
 
             <div className="relative top-10 flex flex-col space-y-10 items-center justify-center ">
-                <Button className="flex space-x-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-[50px] hover:bg-white hover:text-black">
-
-                    <h1>Je réserve mon billet </h1>
-                    <ArrowRight />
-                </Button>
+                <GrandianButton action={() => {
+                    router.push("/billet")
+                }} title={"Achetez vos ticket"} />
 
                 <div onClick={() => {
                     router.push("/#section2")
@@ -34,7 +38,7 @@ const HomeSection1 = () => {
 
 
 
-        </section>
+        </motion.section>
     );
 }
 

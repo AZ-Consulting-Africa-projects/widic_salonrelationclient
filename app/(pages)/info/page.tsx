@@ -19,7 +19,6 @@ export default function Info() {
                 </div>
 
                 <div>
-                    <h1 className="text-2xl md:text-4xl  font-bold" >Comment se rendre au Salon ?</h1>
                 </div>
 
             </div>

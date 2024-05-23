@@ -34,7 +34,7 @@ const NavContent = ({ styles }: Props) => {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent >
                         <div className="w-[350px] p-4 bg-white flex flex-col space-y-5">
-                            <Link href="/ssalon" className="cursor-pointer hover:text-pink-300">Salon</Link>
+                           {/*  <Link href="/salon" className="cursor-pointer hover:text-pink-300">Salon</Link>*/}
                             <Link href="/organisateurs" className="cursor-pointer hover:text-pink-300">Les organisateurs</Link>
                             <Link href="/edition-precedent" className="cursor-pointer hover:text-pink-300">Retour sur les édition précédantes</Link>
                             <Link href="/exposants" className="cursor-pointer hover:text-pink-300">Les exposants</Link>
@@ -45,18 +45,11 @@ const NavContent = ({ styles }: Props) => {
                 </NavigationMenuItem>
 
 
+                
+
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-white hover:bg-transparent hover:text-pink-300">
-                        Devenir partenaire
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent className="  w-[350px] p-4 bg-white flex flex-col space-y-5">
+                    <NavigationMenuLink href="/partenaire" className=" text-white cursor-pointer hover:text-pink-300"> Devenir partenaire</NavigationMenuLink>
 
-                        <div className="w-[300px] p-4 bg-white flex flex-col space-y-5">
-                            <Link href="/partenaire" className="cursor-pointer hover:text-pink-300">Pourquoi devenir partenaire</Link>
-                            <Link href="/offre" className="cursor-pointer hover:text-pink-300">Les offres</Link>
-
-                        </div>
-                    </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -65,12 +58,7 @@ const NavContent = ({ styles }: Props) => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuLink href="/billet" className=" text-white cursor-pointer hover:text-pink-300">Réserver votre billet</NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                    <NavigationMenuLink href="/contact" className=" text-white cursor-pointer hover:text-pink-300">Prendre RDV avec un expert</NavigationMenuLink>
-
+                    <NavigationMenuLink href="/billet" className=" text-white cursor-pointer hover:text-pink-300">Acheter votre ticket</NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -78,10 +66,6 @@ const NavContent = ({ styles }: Props) => {
 
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                    <NavigationMenuLink className=" text-white cursor-pointer hover:text-pink-300">Blog</NavigationMenuLink>
-
-                </NavigationMenuItem>
 
 
 

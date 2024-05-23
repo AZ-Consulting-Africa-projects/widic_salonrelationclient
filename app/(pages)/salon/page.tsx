@@ -12,12 +12,11 @@ export default function Salon() {
 
             <div className='flex flex-col space-y-20 md:w-[600px]'>
                 <h1>
-                Le Salon de la Relation 
-                Client de l'Ouest joue un rôle essentiel pour les entreprises 
-                du tissu économique en offrant un lieu d'échanges, de connaissances 
-                et de rencontres autour des enjeux de la relation client. 
-                C'est une occasion précieuse pour les entreprises d'améliorer 
-                leur démarche et de découvrir les dernières approches et innovations dans le domaine.
+               
+Le Salon de la Relation Client de WIDIC est un événement clé pour les entreprises de la région, 
+fournissant un espace dédié aux échanges, à l'acquisition de connaissances et aux rencontres centrées sur 
+les défis de la relation client. Cet événement offre une opportunité précieuse 
+aux entreprises pour perfectionner leurs pratiques et explorer les dernières tendances et innovations dans ce domaine.
                 </h1>
 
                 <h1>

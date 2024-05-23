@@ -1,130 +1,151 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import GrandianButton from "./GradianButton";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Router } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import { fadeIn } from "@/variante";
+import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 interface TimeLeft {
     days: number;
     hours: number;
     minutes: number;
     seconds: number;
-  }
-  
-  
-    const calculateTimeLeft = (): TimeLeft => {
-      const targetDate = new Date('2024-08-09T08:30:00').getTime();
-      const currentDate = new Date().getTime();
-      const difference = targetDate - currentDate;
-  
-      if (difference > 0) {
+}
+
+
+const calculateTimeLeft = (): TimeLeft => {
+    const targetDate = new Date('2024-08-09T08:30:00').getTime();
+    const currentDate = new Date().getTime();
+    const difference = targetDate - currentDate;
+
+    if (difference > 0) {
         return {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
+            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+            minutes: Math.floor((difference / 1000 / 60) % 60),
+            seconds: Math.floor((difference / 1000) % 60),
         };
-      } else {
+    } else {
         return {
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
         };
-      }
-    };
+    }
+};
 
 
 const HomeSection3 = () => {
+    const router = useRouter();
     const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
     useEffect(() => {
         const interval = setInterval(() => {
-          setTimeLeft(calculateTimeLeft());
+            setTimeLeft(calculateTimeLeft());
         }, 1000);
-    
+
         return () => clearInterval(interval);
-      }, []);
+    }, []);
 
     return (
-        <section className="bg-[#151853] h-auto py-[150px] px-3 md:px-[250px] w-full flex flex-col space-y-20 text-white">
+        <section className="bg-[#2b7186] h-auto py-[150px] px-3 md:px-[250px] w-full flex flex-col space-y-20 text-white">
             {/** rest of day */}
-            <div className="w-full flex space-x-1 md:space-x-8 items-center justify-center">
-                <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-500 flex flex-col items-center justify-center  ">
+            <motion.div
+                variants={fadeIn('down', 0.2)}
+                initial='hidden'
+                whileInView='show'
+                exit='hidden'
+
+                className="w-full flex space-x-1 md:space-x-8 items-center justify-center">
+                <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-400 flex flex-col items-center justify-center  ">
                     <div className="md:text-6xl font-bold">{timeLeft.days}</div>
-                    <div className="text-gray-500 text-[12px] md:text-xl">Jours</div>
+                    <div className="text-gray-400 text-[12px] md:text-xl">Jours</div>
                 </div>
 
-                <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-500 flex flex-col items-center justify-center  ">
+                <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-400 flex flex-col items-center justify-center  ">
                     <div className="md:text-6xl font-bold">{timeLeft.hours}</div>
-                    <div className="text-gray-500 text-[12px] md:text-xl">Heures</div>
+                    <div className="text-gray-400 text-[12px] md:text-xl">Heures</div>
                 </div>
 
-                <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-500 flex flex-col items-center justify-center  ">
+                <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-400 flex flex-col items-center justify-center  ">
                     <div className="md:text-6xl font-bold">{timeLeft.minutes}</div>
-                    <div className="text-gray-500 text-[12px] md:text-xl">Minutes</div>
+                    <div className="text-gray-400 text-[12px] md:text-xl">Minutes</div>
                 </div>
 
-                <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-500 flex flex-col items-center justify-center  ">
+                <div className="md:w-[150px] md:h-[150px] w-[80px] h-[80px] border border-gray-400 flex flex-col items-center justify-center  ">
                     <div className="md:text-6xl font-bold">{timeLeft.seconds}</div>
-                    <div className="text-gray-500 text-[12px] md:text-xl">Secondes</div>
+                    <div className="text-gray-400 text-[12px] md:text-xl">Secondes</div>
                 </div>
-            </div>
-            <Separator  className="flex md:hidden w-full "/>
+            </motion.div>
+            <Separator className="flex md:hidden w-full " />
 
             {/** rest of day */}
-            <div className="flex flex-col space-y-8 mt-10 md:w-[600px] ">
+            <motion.div
+                variants={fadeIn('up', 0.2)}
+                initial='hidden'
+                whileInView='show'
+                exit='hidden'
+                className="flex flex-col space-y-8 mt-10 md:w-[800px] ">
                 <h1 className="md:text-4xl text-2xl font-bold">
-                    Les conférences et les ateliers organisés lors du salon sont l'un des points forts de l'événement.
+                    Les séminaires et les sessions de formation offerts pendant la conférence constituent l'un des moments phares de l'événement.
                 </h1>
 
-                <h1 className="md:text-xl text-lg font-bold">
-                    Ils permettent aux participants d'approfondir leurs
-                    connaissances sur les tendances émergentes, les stratégies
-                    gagnantes et les nouvelles approches en matière de relation client.
+                <h1 className="md:text-xl text-sm font-bold">
+                    Ils offrent aux participants l'opportunité d'approfondir leurs connaissances sur les tendances émergentes, les stratégies gagnantes, ainsi que sur les nouvelles approches en matière de relation client.
                 </h1>
 
-                <GrandianButton action={null} title="Découvrir le programme" style="w-[300px]" />
-            </div>
-            <Separator  className="flex md:hidden w-full relative top-3"/>
+                <GrandianButton action={() => {
+                    router.push('/programme')
+                }} title="Découvrir le programme" style=":w-[300px]" />
+            </motion.div>
+            <Separator className="flex md:hidden w-full relative top-3" />
 
             <div className="w-full flex flex-col space-y-8 items-center justify-center ">
                 <h1 className="md:text-4xl text-2xl font-bold text-center">
-                    La relation client est au cœur de votre stratégie ? Alors devenez partenaire du Salon de la Relation Client de l’Ouest.
+
+                    La gestion de la relation client est au centre de vos préoccupations ? Rejoignez-nous en tant que partenaire du Salon de la Relation Client de WIDIC GROUP.
                 </h1>
 
-                <Button variant="outline" className=" bg-transparent hover:text-white hover:bg-[#86286A] rounded-3xl">
-                    <h1>Télécharger la pacquete partenaire </h1>
+                <Button onClick={() => {
+                    router.push('/partenaire')
+                }} variant="outline" className=" bg-transparent hover:text-white hover:bg-[#86286A] rounded-3xl">
+                    <h1>Devenir Sponsor </h1>
                     <ArrowRight />
                 </Button>
             </div>
-            <Separator  className="flex md:hidden w-full "/>
+            <Separator className="flex md:hidden w-full " />
 
 
             {/** rest of day */}
-            <div className="flex flex-col md:self-end space-y-8 mt-10 md:w-[600px] ">
-                <h1 className="md:text-4xl text-xl font-bold">
-                    Une journée d’immersion dans un écosystème dédié à la relation client
-                </h1>
+            <div className="flex flex-col space-y-5 md:flex-row md:space-y-0  md:space-x-10 md:justify-between md:content-between items-center">
+                <Image src="/images/footbg.jpg" alt="" width={350} height={350} className="object-cover content-center w-full" />
+                <div className="flex flex-col md:self-end space-y-8 mt-10 md:w-full  ">
+                    <h1 className="md:text-4xl text-xl font-bold">
+                        Une journée complète d'immersion au sein d'un écosystème entièrement dédié à la relation client.
+                    </h1>
 
-                <h1 className="md:text-xl text-md ">
-                    Depuis 4 ans, le Salon de la Relation Client l’Ouest, c’est une occasion précieuse pour les entreprises d’améliorer leur démarche et de découvrir les dernières approches et innovations dans le domaine.
-                </h1>
-
-                <GrandianButton action={null} title="Voir tous les exposants" style="w-[300px]" />
+                    <GrandianButton action={() => {
+                        router.push('/exposants')
+                    }} title="les exposants" style="md:w-[300px]" />
+                </div>
             </div>
-            <Separator  className="flex md:hidden w-full "/>
+
+            <Separator className="flex md:hidden w-full " />
 
 
             <div className="w-full flex flex-col space-y-8 items-center justify-center ">
-                <h1 className="text-center text-2xl font-bold">Inscrivez vous à notre newsletter Relation client</h1>
+                <h1 className="text-center text-2xl font-bold">Nous contacter</h1>
 
-                <form className="md:w-[800px] flex flex-col space-y-8 p-8 bg-[#21245C] rounded-xl">
-                    <Input type="nom" name="nom"  className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Nom"/>
-                    <Input type="nom" name="nom"  className="border-x-0 border-t-0  bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Message"/>
-                    <Input type="nom" name="nom"  className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Email"/>
+                <form className="md:w-[800px] flex flex-col space-y-8 p-8 bg-[#225969] rounded-xl">
+                    <Input type="nom" name="nom" className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Nom" />
+                    <Input type="nom" name="nom" className="border-x-0 border-t-0  bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Message" />
+                    <Input type="nom" name="nom" className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Email" />
                     <GrandianButton action={null} title="envoyer" style="w-[150px]" />
                 </form>
             </div>

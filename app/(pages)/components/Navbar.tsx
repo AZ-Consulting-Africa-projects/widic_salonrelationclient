@@ -3,6 +3,7 @@
 
 import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetDescription,
     SheetHeader,
@@ -18,7 +19,7 @@ import NavContentSm from "./NavContentSm";
 
 const Navbar = () => {
     return (
-        <div className="fixed top-0 w-full bg-stone-900 h-20 flex space-x-10 items-center  justify-center">
+        <div className="fixed top-0 w-full bg-gray-800 h-20 flex space-x-10 items-center  justify-center">
 
             <Link href="/" className="md:hidden flex ml-5 items-center self-center w-auto text-white font-medium">ACCEUIL</Link>
 
@@ -28,16 +29,19 @@ const Navbar = () => {
                         <AlignJustify className="text-white" />
                     </SheetTrigger>
 
-                    <SheetContent>
+                    <SheetContent  >
                         <SheetHeader>
                             <SheetTitle></SheetTitle>
                             <SheetDescription>
                             </SheetDescription>
                         </SheetHeader>
-                        <div>
-                            <NavContentSm />
-                        </div>
-                       
+                            <div onClick={() => {
+                                null
+                            }}>
+                                <NavContentSm />
+                            </div>
+
+
                     </SheetContent>
                 </Sheet>
             </div>

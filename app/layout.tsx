@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
+import { ReduxProvider } from "@/redux/providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,11 +22,14 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={poppins.className}>
-      <AntdRegistry>
-         <Toaster />
-        {children}
-      </AntdRegistry>
-     
+        <ReduxProvider>
+          <AntdRegistry>
+            <Toaster />
+            {children}
+          </AntdRegistry>
+        </ReduxProvider>
+
+
       </body>
     </html>
   );
