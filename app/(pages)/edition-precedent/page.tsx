@@ -17,7 +17,7 @@ export default function EditionPrecedent() {
     return (
         <div className="flex flex-col ">
 
-            <div className="w-full py-[200px] px-4 md:px-[280px] h-[350px] text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500">
+            <div className="w-full py-[200px] px-4 md:px-[280px] h-[250px] text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500">
                 <h1 className="md:text-4xl text-2xl font-bold">Retour sur les éditions précédentes</h1>
             </div>
 
@@ -185,8 +185,7 @@ export default function EditionPrecedent() {
                             </CarouselItem>
                         ))}
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                  
                 </Carousel>*/}
                 </div>
             </div>

@@ -30,10 +30,10 @@ const NavContentSm = () => {
             }} className="cursor-pointer hover:text-pink-300">Les exposants</div>
 
 
-             <div onClick={() => {
+            {/* <div onClick={() => {
                 route.push('/info')
             }} className="cursor-pointer hover:text-pink-300">Informations pratiques</div>
-
+        */}
 
             
             <div onClick={() => {

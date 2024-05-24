@@ -2,6 +2,8 @@
 
 import { CalendarDays, Clock } from "lucide-react"
 import GradianButton from "../components/GradianButton"
+import { motion } from "framer-motion"
+import { fadeIn } from "@/variante"
 
 const data = [
     {
@@ -35,7 +37,7 @@ export default function Programme() {
     return (
         <div className="flex flex-col ">
 
-            <div className="w-full py-[200px]  px-4 md:px-[280px] h-[500px] text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500">
+            <div className="w-full py-[200px]  px-4 md:px-[280px] h-[250px] text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500">
                 <h1 className="md:text-4xl text-2xl   font-bold">Programme</h1>
             </div>
 
@@ -52,7 +54,11 @@ export default function Programme() {
                     {
                         data.map((items, index) => {
                             return (
-                                <div key={index} className="border rounded-md py-10 px-4 flex md:w-[900px] items-center flex-col space-y-5 md:flex-row md:justify-between md:space-x-5 hover:border-orange-500 md:content-between md:px-20 ">
+                                <motion.div
+                                variants={fadeIn('up', 0.3)}
+                                initial='hidden'
+                                whileInView='show'
+                                key={index} className="border rounded-md py-10 px-4 flex md:w-[900px] items-center flex-col space-y-5 md:flex-row md:justify-between md:space-x-5 hover:border-orange-500 md:content-between md:px-20 ">
 
                                     <div className="w-full font-bold text-sm md:text-lg text-center">
                                         {items.title}
@@ -71,7 +77,7 @@ export default function Programme() {
                                     </div>
 
                                     <GradianButton title="En savoir plus" action={null} style="w-[200px]" />
-                                </div>
+                                </motion.div>
                             );
                         })
                     }

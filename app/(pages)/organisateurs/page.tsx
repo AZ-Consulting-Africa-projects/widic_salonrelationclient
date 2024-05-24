@@ -28,7 +28,7 @@ const data = [
         title: "Expert en Gestion de la Relation client , Digital solutions, promoteur du Salon de la Relation Client",
     },
     {
-        image: "",
+        image: "/images/DSC_0982-removebg-preview.png",
         name: "N'FA Gnimna Alexie ",
         title: " Experte en formation-Support service client- Coach qualité",
     },
@@ -69,14 +69,15 @@ export default function Organisateurs() {
                         {
                         data.map((items, index) => {
                             return (
-                                <CarouselItem key={index} className=" md:basis-1/2 lg:basis-1/3">
+                                <CarouselItem key={index} className="flex items-center justify-center md:basis-1/2 lg:basis-1/3">
                                     
                                    
-                                    <Card className="bg-gray-100 p-3 md:w-[250px] h-[400px]">
+                                    <Card className="bg-gray-100 p-3 w-[300px] h-[400px]">
                                         <CardContent className="flex flex-col space-y-3 items-center justify-center">
                                             
                                                 <Image src={items.image == "" ? "/illustrations/profil3d.png" : items.image} alt="" width={110} height={130} className="object-cover h-[150px] rounded-full" />
                                                 <h2 className="text-2xl font-bold text-center text-sky-600">{items.name}</h2>
+                                                <h1 className="font-light text-gray-600 ">TOGOLAISE</h1>
                                                 <p className="text-center">{items.title}</p>
                                             
                                         </CardContent>

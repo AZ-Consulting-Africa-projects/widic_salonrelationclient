@@ -38,7 +38,7 @@ const NavContent = ({ styles }: Props) => {
                             <Link href="/organisateurs" className="cursor-pointer hover:text-pink-300">Les organisateurs</Link>
                             <Link href="/edition-precedent" className="cursor-pointer hover:text-pink-300">Salon de la realtion Client 1ere édition</Link>
                             <Link href="/exposants" className="cursor-pointer hover:text-pink-300">Les exposants</Link>
-                            <Link href="/info" className="cursor-pointer hover:text-pink-300">Informations pratiques</Link>
+                           {/* <Link href="/info" className="cursor-pointer hover:text-pink-300">Informations pratiques</Link>*/}
 
                         </div>
                     </NavigationMenuContent>
