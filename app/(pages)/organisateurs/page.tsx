@@ -72,7 +72,7 @@ export default function Organisateurs() {
                                 <CarouselItem key={index} className=" md:basis-1/2 lg:basis-1/3">
                                     
                                    
-                                    <Card className="bg-gray-100 p-3 w-[250px] h-[400px]">
+                                    <Card className="bg-gray-100 p-3 md:w-[250px] h-[400px]">
                                         <CardContent className="flex flex-col space-y-3 items-center justify-center">
                                             
                                                 <Image src={items.image == "" ? "/illustrations/profil3d.png" : items.image} alt="" width={110} height={130} className="object-cover h-[150px] rounded-full" />
@@ -88,8 +88,7 @@ export default function Organisateurs() {
                         
                     }
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                   
                 </Carousel>
             </motion.div>
         </div>
