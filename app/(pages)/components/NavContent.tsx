@@ -36,7 +36,7 @@ const NavContent = ({ styles }: Props) => {
                         <div className="w-[350px] p-4 bg-white flex flex-col space-y-5">
                            {/*  <Link href="/salon" className="cursor-pointer hover:text-pink-300">Salon</Link>*/}
                             <Link href="/organisateurs" className="cursor-pointer hover:text-pink-300">Les organisateurs</Link>
-                            <Link href="/edition-precedent" className="cursor-pointer hover:text-pink-300">Retour sur les édition précédantes</Link>
+                            <Link href="/edition-precedent" className="cursor-pointer hover:text-pink-300">Salon de la realtion Client 1ere édition</Link>
                             <Link href="/exposants" className="cursor-pointer hover:text-pink-300">Les exposants</Link>
                             <Link href="/info" className="cursor-pointer hover:text-pink-300">Informations pratiques</Link>
 

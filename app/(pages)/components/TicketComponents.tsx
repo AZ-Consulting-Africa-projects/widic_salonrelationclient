@@ -29,19 +29,19 @@ const TicketComponnet = () => {
         removeKkiapayListener
       } = useKKiaPay();
 
-      function open() {
+      function open(amount: number) {
         openKkiapayWidget({
-            fullname: `nom prenom`,
-            amount: 10000,
+           
+            amount: amount,
             api_key: "3cb8ff60f18711eeae665f935f4f8891",
             sandbox: true,
-            email: `email@gmail.com`,
             phone: "97000000",
         });
     }
 
       // ..... others components options
   function successHandler(response: any) {
+
     console.log(response);
   }
     
@@ -81,11 +81,11 @@ const TicketComponnet = () => {
                                             <h1 className="text-xl font-bold text-gray-800 text-center">Salon de la Relation Client</h1>
                                             <p className="text-sm text-gray-600 text-center">Date: 09 Août 2024</p>
                                             <p className="text-sm text-gray-600 text-center">Heure: 08:00 - 22:00</p>
-                                            <p className="text-sm text-gray-600 text-center">Lieu: </p>
+                                            <p className="text-sm text-gray-600 text-center">Lieu: Lomé-TOGO</p>
                                         </div>
 
                                     <Button onClick={() => {
-                                        open();
+                                        open(Number(item.price));
                                     }} className='w-[250px] bg-orange-600 text-[30px] font-bold' size={"lg"} >
                                         Acheter
                                     </Button>

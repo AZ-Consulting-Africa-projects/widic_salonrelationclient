@@ -35,12 +35,15 @@ const Navbar = () => {
                             <SheetDescription>
                             </SheetDescription>
                         </SheetHeader>
+                        <SheetClose asChild>
                             <div onClick={() => {
                                 null
                             }}>
                                 <NavContentSm />
                             </div>
 
+                        </SheetClose>
+                            
 
                     </SheetContent>
                 </Sheet>

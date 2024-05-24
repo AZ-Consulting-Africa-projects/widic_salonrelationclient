@@ -4,11 +4,13 @@ import GrandianButton from "./GradianButton";
 import { ArrowRight, Router } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, LegacyRef } from "react";
 import Image from "next/image";
 import { fadeIn } from "@/variante";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useToast } from "@/components/ui/use-toast";
+import emailjs from '@emailjs/browser';
 
 interface TimeLeft {
     days: number;
@@ -44,14 +46,38 @@ const calculateTimeLeft = (): TimeLeft => {
 const HomeSection3 = () => {
     const router = useRouter();
     const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+   const {toast} = useToast();
+   const form = useRef<HTMLFormElement>();
+
+
 
     useEffect(() => {
+      
+
         const interval = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
 
         return () => clearInterval(interval);
     }, []);
+
+     //fonction to send email
+     const sendEmail = (e: any) => {
+        e.preventDefault();
+
+        emailjs.sendForm( "service_ne8iyfu" ,  "template_hpb9r8j", form.current!, {publicKey: 'zU_9B3POaiaWspEr4',})
+            .then((result) => {
+                toast({
+                    description: "Email envoyer avec succès",
+                })
+            }, () => {
+                toast({
+                    variant: 'destructive',
+                    description: "Un problème est survenu lors de l'envoi de l'email",
+
+                })
+            });
+    };
 
     return (
         <section className="bg-[#2b7186] h-auto py-[150px] px-3 md:px-[250px] w-full flex flex-col space-y-20 text-white">
@@ -102,7 +128,7 @@ const HomeSection3 = () => {
 
                 <GrandianButton action={() => {
                     router.push('/programme')
-                }} title="Découvrir le programme" style=":w-[300px]" />
+                }} title="Découvrir le programme" style="md:w-[300px]" />
             </motion.div>
             <Separator className="flex md:hidden w-full relative top-3" />
 
@@ -142,10 +168,10 @@ const HomeSection3 = () => {
             <div className="w-full flex flex-col space-y-8 items-center justify-center ">
                 <h1 className="text-center text-2xl font-bold">Nous contacter</h1>
 
-                <form className="md:w-[800px] flex flex-col space-y-8 p-8 bg-[#225969] rounded-xl">
-                    <Input type="nom" name="nom" className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Nom" />
-                    <Input type="nom" name="nom" className="border-x-0 border-t-0  bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Message" />
-                    <Input type="nom" name="nom" className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Email" />
+                <form ref={form as LegacyRef<HTMLFormElement> } onSubmit={sendEmail}  className="md:w-[800px] w-full flex flex-col space-y-8 p-10 bg-[#225969] rounded-xl">
+                    <Input type="text" name={"name"} required className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Nom" />
+                    <Input type="email" name="email" required className="border-x-0 border-t-0  bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Message" />
+                    <Input type="text" name="content" className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Email" />
                     <GrandianButton action={null} title="envoyer" style="w-[150px]" />
                 </form>
             </div>
