@@ -118,7 +118,7 @@ const HomeSection3 = () => {
                 whileInView='show'
                 exit='hidden'
                 className="flex flex-col space-y-8 mt-10 md:w-[800px] ">
-                <h1 className="md:text-4xl text-2xl font-bold">
+                <h1 className="md:text-4xl text-xl font-bold">
                     Les séminaires et les sessions de formation offerts pendant la conférence constituent l'un des moments phares de l'événement.
                 </h1>
 
@@ -128,7 +128,7 @@ const HomeSection3 = () => {
 
                 <GrandianButton action={() => {
                     router.push('/programme')
-                }} title="Découvrir le programme" style="md:w-[300px]" />
+                }} title="Découvrir le programme" style="w-[250px]" />
             </motion.div>
             <Separator className="flex md:hidden w-full relative top-3" />
 
@@ -150,7 +150,7 @@ const HomeSection3 = () => {
 
             {/** rest of day */}
             <div className="flex flex-col space-y-5 md:flex-row md:space-y-0  md:space-x-10 md:justify-between md:content-between items-center">
-                <Image src="/images/footbg.jpg" alt="" width={350} height={350} className="object-cover content-center w-full" />
+                <Image src="/images/footbg.jpg" alt="" width={350} height={350} className="object-cover content-center" />
                 <div className="flex flex-col md:self-end space-y-8 mt-10 md:w-full  ">
                     <h1 className="md:text-4xl text-xl font-bold">
                         Une journée complète d'immersion au sein d'un écosystème entièrement dédié à la relation client.
@@ -158,7 +158,7 @@ const HomeSection3 = () => {
 
                     <GrandianButton action={() => {
                         router.push('/exposants')
-                    }} title="les exposants" style="md:w-[300px]" />
+                    }} title="les exposants" style="w-[250px]" />
                 </div>
             </div>
 
