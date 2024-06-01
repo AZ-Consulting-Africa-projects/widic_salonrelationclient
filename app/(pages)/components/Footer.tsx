@@ -1,6 +1,6 @@
 "use client"
 import { Separator } from "@/components/ui/separator";
-import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const data1 = [
@@ -19,17 +19,17 @@ const data1 = [
 const data2 = [
     {
                 name: "Le salon",
-        link: "/",
+        link: "/salon",
     },
     {
         
         name: "Réserver votre billet",
-        link: "/",
+        link: "/billet",
     },
     {
         
         name: "Prendre RDV avec un expert",
-        link: "/",
+        link: "/contact",
         },
     {
         
@@ -40,7 +40,7 @@ const data2 = [
     {
         
         name: "Contact",
-        link: "/",
+        link: "/contact",
 
     },
 
@@ -49,19 +49,19 @@ const data2 = [
 const data3 = [
     {
                name: <Linkedin />,
-        link: "/",
+        link: "https://www.linkedin.com/company/salon-de-la-relation-client-au-togo/ ",
 
     },
     {
         
         name: <Instagram />,
-        link: "/",
+        link: "https://www.facebook.com/share/PVwLz2j5345J2bCF/?mibextid=qi2Omg ",
 
     },
     {
         
-        name: <Twitter />,
-        link: "/",
+        name: <Facebook />,
+        link: "https://www.facebook.com/share/PVwLz2j5345J2bCF/?mibextid=qi2Omg ",
 
 
     }
