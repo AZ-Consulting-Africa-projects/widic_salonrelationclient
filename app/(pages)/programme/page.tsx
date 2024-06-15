@@ -37,12 +37,12 @@ export default function Programme() {
     return (
         <div className="flex flex-col ">
 
-            <div className="w-full py-[200px]  px-4 md:px-[280px] h-[250px] text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500">
+            <div className="w-full py-[200px]  px-4 md:px-[280px] h-[250px] text-white bg-gradient-to-r from-colorPrimay via-sky-500 to-colorSecondary">
                 <h1 className="md:text-4xl text-2xl   font-bold">Programme</h1>
             </div>
 
 
-            <div className="flex flex-col space-y-20 py-20 px-4 md:px-0 items-center justify-center  bg-[#2b7186] text-white">
+            <div className="flex flex-col space-y-20 py-20 px-4 md:px-0 items-center justify-center  bg-colorPrimay text-white">
 
                 <div className="w-[150px] h-auto flex flex-col  items-center justify-center  bg-green-950 rounded-xl p-3">
 

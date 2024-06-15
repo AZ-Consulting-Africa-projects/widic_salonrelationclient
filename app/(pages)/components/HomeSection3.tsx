@@ -80,7 +80,7 @@ const HomeSection3 = () => {
     };
 
     return (
-        <section className="bg-[#2b7186] h-auto py-[150px] px-3 md:px-[250px] w-full flex flex-col space-y-20 text-white">
+        <section className="bg-colorPrimay h-auto py-[150px] px-3 md:px-[250px] w-full flex flex-col space-y-20 text-white">
             {/** rest of day */}
             <motion.div
                 variants={fadeIn('down', 0.2)}
@@ -168,7 +168,7 @@ const HomeSection3 = () => {
             <div className="w-full flex flex-col space-y-8 items-center justify-center ">
                 <h1 className="text-center text-2xl font-bold">Nous contacter</h1>
 
-                <form ref={form as LegacyRef<HTMLFormElement> } onSubmit={sendEmail}  className="md:w-[800px] w-full flex flex-col space-y-8 p-10 bg-[#225969] rounded-xl">
+                <form ref={form as LegacyRef<HTMLFormElement> } onSubmit={sendEmail}  className="md:w-[800px] w-full text-black flex flex-col space-y-8 p-10 bg-gray-50 rounded-xl">
                     <Input type="text" name={"name"} required className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Nom" />
                     <Input type="email" name="email" required className="border-x-0 border-t-0  bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Message" />
                     <Input type="text" name="content" className="border-x-0 border-t-0 md:w-1/2 bg-transparent focus-visible:border-0 focus-visible:outline-none " placeholder="Email" />

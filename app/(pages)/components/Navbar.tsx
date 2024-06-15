@@ -21,7 +21,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
     const pathName = usePathname();
     return (
-        <div className="fixed top-0 w-full bg-gray-800 h-20 flex  items-center  justify-center">
+        <div className="fixed top-0 w-full bg-colorSecondary/90 h-20 flex  items-center  justify-center">
 
             <Link href="/" className={pathName == "/" ? "md:hidden flex ml-5 items-center self-center w-auto text-blue-400 underline font-medium" : "md:hidden flex ml-5 items-center self-center w-auto text-white font-medium"}>ACCEUIL</Link>
 

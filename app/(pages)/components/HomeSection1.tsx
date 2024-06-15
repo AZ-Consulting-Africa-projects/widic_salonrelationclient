@@ -14,7 +14,7 @@ const HomeSection1 = () => {
         variants={fadeIn('up', 0.5)}
         initial='hidden'
         animate='show'
-        className="flex flex-col items-center space-y-4 justify-center md:h-screen h-[600px]  text-white bg-[#868028]  ">
+        className="flex flex-col items-center space-y-4 justify-center md:h-screen h-[600px]  text-white bg-colorSecondary  ">
             <h1 className="text-xl font-extrabold">09 Août 2024</h1>
             <h1 className="md:text-7xl text-3xl font-bold text-center ">Salon de la relation </h1>
             <h1 className="md:text-6xl text-3xl font-bold text-center ">Client </h1>

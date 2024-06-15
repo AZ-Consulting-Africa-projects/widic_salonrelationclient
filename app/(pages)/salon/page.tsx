@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function Salon() {
     const [isHover, setIsHover] = useState(false);
     return (
-        <div className="bg-[#151853] text-white flex flex-col space-y-10  py-[200px] px-4 md:px-[250px]">
+        <div className="bg-colorPrimay text-white flex flex-col space-y-10  py-[200px] px-4 md:px-[250px]">
          <h1 className="md:text-5xl text-2xl font-bold">Salon de la relation client</h1>
 
             <div className='flex flex-col space-y-20 md:w-[600px]'>

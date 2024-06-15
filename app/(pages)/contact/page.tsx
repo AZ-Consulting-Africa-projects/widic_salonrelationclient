@@ -74,7 +74,7 @@ export default function Contact() {
         }
     })
     return (
-        <div className="flex flex-col h-screen space-y-20 py-[150px] px-4 md:px-[280px] bg-[#2b7186] text-white">
+        <div className="flex flex-col h-screen space-y-20 py-[150px] px-4 md:px-[280px] bg-colorPrimay text-white">
             <div className="w-full flex flex-col space-y-8 items-center justify-center ">
                 <motion.h1
                     variants={fadeIn('right', 0.3)}
@@ -89,7 +89,7 @@ export default function Contact() {
                     variants={fadeIn('left', 0.5)}
                     initial='hidden'
                     animate='show'
-                    className="md:w-[800px] w-full flex flex-col space-y-8 p-10 bg-[#225969] rounded-xl">
+                    className="md:w-[800px] w-full flex flex-col space-y-8 p-10 bg-gray-50 text-black  rounded-xl">
 
                     <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                         <div className="flex flex-col">
