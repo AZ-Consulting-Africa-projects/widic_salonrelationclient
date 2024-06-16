@@ -29,7 +29,7 @@ const HomeSection2 = () => {
         id="section2" className=" md:space-x-10 h-1/5 px-4 md:px-0 items-center flex md:flex-row flex-col space-y-5 justify-center py-[150px]">
             <div className="bg-white shadow-xl rounded-lg p-5 justify-center flex items-end w-full md:w-[250px] h-[150px] ">
                 <h1 className="text-center text-blue-600 text-xl font-bold">
-                    + {part.length} participants
+                    + 400 participants
                 </h1>
             
             </div>
@@ -42,7 +42,7 @@ const HomeSection2 = () => {
 
             <div className="bg-white shadow-xl rounded-lg p-5 justify-center flex items-end  w-full md:w-[250px] h-[150px] ">
                 <h1 className="text-center text-blue-600 text-xl font-bold">
-                {exp.length} exposants
+                24 exposants
                 </h1>
             </div>
         </motion.section>

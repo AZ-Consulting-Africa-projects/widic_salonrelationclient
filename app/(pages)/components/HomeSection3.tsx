@@ -21,7 +21,7 @@ interface TimeLeft {
 
 
 const calculateTimeLeft = (): TimeLeft => {
-    const targetDate = new Date('2024-08-09T08:30:00').getTime();
+    const targetDate = new Date('2024-08-03T08:30:00').getTime();
     const currentDate = new Date().getTime();
     const difference = targetDate - currentDate;
 

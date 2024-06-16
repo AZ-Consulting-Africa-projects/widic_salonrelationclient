@@ -13,12 +13,16 @@ import { useEffect, useRef } from 'react';
 
 const data = [
     {
+        type: "Agent call center",
+        price: "5000"
+    },
+    {
         type: "STANDART",
-        price: "50000"
+        price: "25000"
     },
     {
         type: "VIP",
-        price: "100000"
+        price: "40000"
     },
     
 

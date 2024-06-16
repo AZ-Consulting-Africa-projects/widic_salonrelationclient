@@ -31,10 +31,10 @@ const NavContentSm = () => {
             }} className={pathName == "/exposants" ? "cursor-pointer text-blue-400 underline hover:text-pink-300" : "cursor-pointer hover:text-pink-300"}>Les exposants</div>
 
 
-            {/* <div onClick={() => {
-                route.push('/info')
-            }} className="cursor-pointer hover:text-pink-300">Informations pratiques</div>
-        */}
+             <div onClick={() => {
+                route.push('/election')
+            }} className={pathName == "/election" ? "cursor-pointer text-blue-400 underline hover:text-pink-300" : "cursor-pointer hover:text-pink-300"}>Election du Meilleur Service Client</div>
+       
 
             
             <div onClick={() => {

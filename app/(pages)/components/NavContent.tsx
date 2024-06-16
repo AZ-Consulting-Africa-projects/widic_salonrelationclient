@@ -39,7 +39,7 @@ const NavContent = ({ styles }: Props) => {
                             <Link href="/organisateurs" className={pathName == "/organisateurs"? "text-blue-400 underline cursor-pointer hover:text-pink-300" : " text-black cursor-pointer hover:text-pink-300"}>Les organisateurs</Link>
                             <Link href="/edition-precedent" className={pathName == "/edition_precedent"? "text-blue-400 underline cursor-pointer hover:text-pink-300" : " text-black cursor-pointer hover:text-pink-300"}>Salon de la realtion Client 1ere édition</Link>
                             <Link href="/exposants" className={pathName == "/exposants"? "text-blue-400 underline cursor-pointer hover:text-pink-300" : " text-black cursor-pointer hover:text-pink-300"}>Les exposants</Link>
-                           {/* <Link href="/info" className="cursor-pointer hover:text-pink-300">Informations pratiques</Link>*/}
+                            <Link href="/election" className="cursor-pointer hover:text-pink-300">Election du Meilleur Service Client</Link>
 
                         </div>
                     </NavigationMenuContent>
