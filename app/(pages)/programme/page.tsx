@@ -47,7 +47,7 @@ export default function Programme() {
                 <div className="w-[150px] h-auto flex flex-col  items-center justify-center  bg-green-950 rounded-xl p-3">
 
                     <h1 className="text-center font-bold">jours</h1>
-                    <h1 className="text-center">09 Août 2024 </h1>
+                    <h1 className="text-center">03 Août 2024 </h1>
                 </div>
 
                 <div className="flex flex-col space-y-10">
@@ -67,7 +67,7 @@ export default function Programme() {
                                     <div className="flex flex-col space-y-5 w-full sm:self-center">
                                         <div className="flex space-x-3">
                                             <CalendarDays className=" text-orange-400 " />
-                                            <h1>Le 09-06-2024</h1>
+                                            <h1>Le 03-08-2024</h1>
                                         </div>
 
                                         <div className="flex space-x-3">
