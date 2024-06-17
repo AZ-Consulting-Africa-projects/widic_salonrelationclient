@@ -26,7 +26,7 @@ export default function EditionPrecedent() {
                  variants={fadeIn('down', 0.3)}
                  initial='hidden'
                  animate='show'
-                className="md:text-4xl text-2xl font-bold">Salon de la relation client WIDIC GROUP</motion.h1>
+                className="md:text-4xl text-2xl font-bold">Salon de la relation client WIDIC GROUP (AZ CONSULTING AFRICA)</motion.h1>
 
                 <motion.h1
                  variants={fadeIn('up', 0.3)}
