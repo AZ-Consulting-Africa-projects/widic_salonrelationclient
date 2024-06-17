@@ -17,20 +17,35 @@ import Autoplay from "embla-carousel-autoplay"
 const data = [
     
     {
+        natio: "TOGOLAISE",
         image: "/images/IMG-20240125-WA0038-removebg-preview.png",
         name: "AKPELASSI E. KOSSIWA",
         title: "COMMUNICATION DIGITALE",
     },
 
     {
+        natio: "TOGOLAISE",
         image: "/images/Yawo_Atiah-removebg-preview.png",
         name: "Ephrem Yawo Atiah",
         title: "Expert en Gestion de la Relation client , Digital solutions, promoteur du Salon de la Relation Client",
     },
     {
+        natio: "TOGOLAISE",
         image: "/images/DSC_0982-removebg-preview.png",
         name: "N'FA Gnimna Alexie ",
         title: " Experte en formation-Support service client- Coach qualité",
+    },
+    {
+        natio: "TOGOLAISE",
+        image: "/images/eyram-removebg-preview.png",
+        name: "HOUNTODJI Akouvi Eyram ",
+        title: "Financière",
+    },
+    {
+        natio: "TOGOLAISE",
+        image: "/images/sadate-removebg-preview.png",
+        name: "IBRAHIM K. El-Sadate ",
+        title: " Spécialiste en Gestion de la Relation Client & Expérience Client || Formateur GRC",
     },
 
 
@@ -72,12 +87,12 @@ export default function Organisateurs() {
                                 <CarouselItem key={index} className="flex items-center justify-center md:basis-1/2 lg:basis-1/3">
                                     
                                    
-                                    <Card className="bg-gray-100 p-3 w-[300px] h-[400px]">
+                                    <Card className="bg-gray-100 p-3 w-[320px] h-[450px]">
                                         <CardContent className="flex flex-col space-y-3 items-center justify-center">
                                             
-                                                <Image src={items.image == "" ? "/illustrations/profil3d.png" : items.image} alt="" width={110} height={130} className="object-cover h-[150px] rounded-full" />
+                                                <Image src={items.image == "" ? "/illustrations/profil3d.png" : items.image} alt="" width={130} height={130} className="object-cover content-center   rounded-full" />
                                                 <h2 className="text-2xl font-bold text-center text-sky-600">{items.name}</h2>
-                                                <h1 className="font-light text-gray-600 ">TOGOLAISE</h1>
+                                                <h1 className="font-light text-gray-600 ">{items.natio}</h1>
                                                 <p className="text-center">{items.title}</p>
                                             
                                         </CardContent>
