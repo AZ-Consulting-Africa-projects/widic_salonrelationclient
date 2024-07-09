@@ -1,5 +1,20 @@
 import Joi from "joi";
 export class Dto {
+
+
+    static ParticipantDto() {
+        const schema = Joi.object({
+            firstName: Joi.string().required(),
+            lastName: Joi.string().required(),
+            email: Joi.string().email().required(),
+            phone: Joi.number().required().integer(),
+            reference: Joi.string().required(),
+            capture: Joi.string().required(),
+            id: Joi.number().optional(),
+        });
+
+            return schema;
+    }
     static EventDto() {
         const schema = Joi.object({
             title: Joi.string().required(),

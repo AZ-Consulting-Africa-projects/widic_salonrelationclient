@@ -67,6 +67,11 @@ const NavContent = ({ styles }: Props) => {
 
                 </NavigationMenuItem>
 
+                <NavigationMenuItem>
+                    <NavigationMenuLink href="/registre" className={pathName == "/registre"? "text-blue-400 underline cursor-pointer hover:text-pink-300" : " text-white cursor-pointer hover:text-pink-300"}>S'inscrire</NavigationMenuLink>
+
+                </NavigationMenuItem>
+
 
 
 

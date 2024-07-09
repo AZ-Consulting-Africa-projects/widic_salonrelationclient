@@ -11,12 +11,14 @@ interface ImageUploadProps {
     onChange: (value: string) => void;
     onRemove: (value: string) => void;
     value: string;
+    style?: string;
 }
 const ImageUpload = ({
     disable,
     onChange,
     onRemove,
     value,
+    style
 }: ImageUploadProps) => {
 
     const [isMounted, setIsMounted] = useState(false);
@@ -50,7 +52,7 @@ const ImageUpload = ({
                     }
 
                     return (
-                        <div className={'rounded-[15px] border border-solid border-black dark:border-white mb-4 flex flex-col items-center gap-4'}>
+                        <div className={`rounded-[15px] border border-solid  border-gray-400 dark:border-white mb-4 flex flex-col items-center gap-4 ${style}`}>
 
                             <div
                                 className={' flex relative w-[200px] h-[200px] rounded-md overflow-hidden'}>

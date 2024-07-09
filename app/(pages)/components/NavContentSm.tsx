@@ -52,7 +52,13 @@ const NavContentSm = () => {
 
             <div onClick={() => {
                 route.push('/contact')
-            }} className={pathName == "/contact" ? "cursor-pointer text-blue-400 underline hover:text-pink-300" : "cursor-pointer hover:text-pink-300"}>Contact</div>
+            }} className={pathName == "/contact" ? "cursor-pointer text-blue-400 underline hover:text-pink-300" : "cursor-pointer hover:text-pink-300"}>Contact
+            </div>
+
+            <div onClick={() => {
+                route.push('/registre')
+            }} className={pathName == "/registre" ? "cursor-pointer text-blue-400 underline hover:text-pink-300" : "cursor-pointer hover:text-pink-300"}>S'inscrire
+            </div>
         </div>
     )
 }
