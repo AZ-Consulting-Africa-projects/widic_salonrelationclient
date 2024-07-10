@@ -11,6 +11,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ImageUpload from '@/components/ImageUpload';
+import { Phone } from 'lucide-react';
 
 export default function Registre() {
     const [loading, setLoading] = useState(false)
@@ -42,11 +43,11 @@ export default function Registre() {
             //console.log(particiapantModel);
 
             const resp = await Api.create("/api/participant", particiapantModel);
-            const res = await Api.create("/api/sendEmail", {email: values.email});
+            const res = await Api.create("/api/sendEmail", { email: values.email });
             //console.log(res);
-            
+
             setLoading(false);
-           if (resp.ok) {
+            if (resp.ok) {
                 toast({
                     title: "Enregistrement effectué avec succès",
                 });
@@ -80,8 +81,24 @@ export default function Registre() {
 
                     <div className={"flex flex-col space-y-5"}>
                         <Image src="/logos/logo1.png" alt="" width={80} height={80} priority quality={100} className="object-cover bg-center flex self-center" />
+                        <div className="flex flex-col space-y-5">
+                            <h1 className='text-colorPrimay font-medium text-center text-xl'>Les numéros pour le paiement des tickets</h1>
+                            <h1 className='text-center'>VIP : 20000FCFA, <br /> STANDARD : 10000FCFA</h1>
 
-                        <h1 className='text-colorPrimay font-medium text-center text-xl'>S'enregistrer Maintenant.</h1>
+                            <div className="grid grid-cols-2 gap-4 self-center items-center">
+                            <div className="p-4 flex items-center justify-center flex-col space-y-2 rounded-lg shadow-xl border-2 border-colorSecondary/50">
+                                <Phone className="text-colorSecondary" />
+                                <h1 className="text-lg font-bold">+22890214140</h1>
+                            </div>
+
+                            <div className="p-4 flex items-center justify-center flex-col space-y-2 rounded-lg shadow-xl border-2 border-colorSecondary/50">
+                                <Phone className="text-colorSecondary" />
+                                <h1 className="text-lg font-bold">+22899926262</h1>
+                            </div>
+                            </div>
+                            
+                        </div>
+                        <h1 className='text-colorPrimay mt-5 font-medium text-center text-xl'>S'enregistrer Maintenant.</h1>
 
                         <form className="flex flex-col space-y-5" onSubmit={formik.handleSubmit}>
 
@@ -139,7 +156,7 @@ export default function Registre() {
                             {/** logo */}
                             <div className="">
                                 <label htmlFor="" className={formik.errors.capture && formik.touched.capture ? 'text-red-600' : ''}>
-                                {formik.errors.capture && formik.touched.capture ? formik.errors.capture : ' Capture du dépot'}
+                                    {formik.errors.capture && formik.touched.capture ? formik.errors.capture : ' Capture du dépot'}
 
                                     <span className="text-red-600">*</span>
                                 </label>
