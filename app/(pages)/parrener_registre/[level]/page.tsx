@@ -218,7 +218,7 @@ export default function LarrenerRegistre({ params }: { params: { level: string }
 
 
   return (
-    <div className="py-[100px]  px-4 flex bg-colorPrimay text-white justify-center items-center">
+    <div className="py-[100px]  px-4 flex bg-colorPrimay overflow-x-hidden hide-scrollbar text-white justify-center items-center">
      
       <div className='flex flex-col space-y-10 items-center'>
 

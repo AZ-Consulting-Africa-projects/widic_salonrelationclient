@@ -74,7 +74,7 @@ export default function Contact() {
         }
     })
     return (
-        <div className="flex flex-col h-screen space-y-20 py-[150px] px-4 md:px-[280px] bg-colorPrimay text-white">
+        <div className="flex flex-col h-screen space-y-20 py-[150px] px-4 md:px-[280px] bg-colorPrimay text-white overflow-x-hidden hide-scrollbar">
             <div className="w-full flex flex-col space-y-8 items-center justify-center ">
                 <motion.h1
                     variants={fadeIn('right', 0.3)}

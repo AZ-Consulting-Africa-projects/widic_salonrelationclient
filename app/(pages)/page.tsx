@@ -7,7 +7,7 @@ import HomeSection3 from "./components/HomeSection3";
 
 export default function Home() {
   return (
-    <main className="flex flex-col ">
+    <main className="flex flex-col overflow-x-hidden hide-scrollbar">
       <HomeSection1 />
       <HomeSection2 />
       <HomeSection3 />

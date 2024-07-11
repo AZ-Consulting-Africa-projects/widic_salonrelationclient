@@ -8,21 +8,22 @@ import type { ProgressProps } from 'antd';
 import Image from 'next/image';
 import { useKKiaPay } from 'kkiapay-react';
 import { useEffect, useRef } from 'react';
+import { useRouter } from "next/navigation";
 
 
 
 const data = [
-    {
+    /*{
         type: "Agent call center",
         price: "5000"
-    },
+    },*/
     {
         type: "STANDART",
-        price: "25000"
+        price: "10000"
     },
     {
         type: "VIP",
-        price: "40000"
+        price: "20000"
     },
     
 
@@ -30,6 +31,7 @@ const data = [
 
 const TicketComponnet = () => {
     const refPdf: any = useRef();
+    const router = useRouter();
     const { 
         openKkiapayWidget,
         addKkiapayListener,
@@ -107,13 +109,14 @@ const TicketComponnet = () => {
                                     </div>
                                     <div>
                                             <h1 className="text-xl font-bold text-gray-800 text-center">Salon de la Relation Client</h1>
-                                            <p className="text-sm text-gray-600 text-center">Date: 09 Août 2024</p>
+                                            <p className="text-sm text-gray-600 text-center">Date: 03 Août 2024</p>
                                             <p className="text-sm text-gray-600 text-center">Heure: 08:00 - 22:00</p>
                                             <p className="text-sm text-gray-600 text-center">Lieu: Lomé-TOGO</p>
                                         </div>
 
                                     <Button onClick={() => {
-                                        open(Number(item.price));
+                                        //open(Number(item.price));
+                                        router.push('/registre')
                                         
                                         
                                     }} className='w-[250px] bg-orange-600 text-[30px] font-bold' size={"lg"} >

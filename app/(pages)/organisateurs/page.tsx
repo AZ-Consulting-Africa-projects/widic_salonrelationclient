@@ -56,7 +56,7 @@ export default function Organisateurs() {
    
 
     return (
-        <div className="flex flex-col  space-y-20 py-[120px] pb-[150px] px-4 md:px-20 bg-colorPrimay text-white">
+        <div className="flex flex-col  hide-scrollbar space-y-20 py-[120px] pb-[150px] px-4 md:px-20 bg-colorPrimay overflow-x-hidden hide-scrollbar text-white">
             <motion.h1
             variants={fadeIn('down', 0.3)}
             initial='hidden'
