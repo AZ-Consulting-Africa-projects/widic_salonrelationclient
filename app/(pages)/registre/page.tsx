@@ -180,6 +180,8 @@ export default function Registre() {
                                 />
                             </div>
 
+                            
+
 
 
                             <Button loading={loading} htmlType="submit" className="bg-colorPrimay text-white font-bold md:w-[16rem] text-center  md:self-end">

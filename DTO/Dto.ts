@@ -2,6 +2,26 @@ import Joi from "joi";
 export class Dto {
 
 
+    static sponsorDto() {
+        const schema = Joi.object({
+            firstName: Joi.string().required(),
+            lastName: Joi.string().required(),
+            captureUrl: Joi.string().required(),
+            organisationName: Joi.string().required(),
+            logoUrl: Joi.string().required(),
+            email: Joi.string().email().required(),
+            phone: Joi.number().required(),
+            reference: Joi.string().required(),
+            presentation: Joi.string().required(),
+            domaine: Joi.string().required(),
+            id: Joi.number().optional(),
+            isVisible: Joi.boolean().optional(),
+            isActivated: Joi.boolean().optional(),
+        });
+
+        return schema;
+    }
+
     static ParticipantDto() {
         const schema = Joi.object({
             firstName: Joi.string().required(),
@@ -13,7 +33,7 @@ export class Dto {
             id: Joi.number().optional(),
         });
 
-            return schema;
+        return schema;
     }
     static EventDto() {
         const schema = Joi.object({
@@ -53,16 +73,7 @@ export class Dto {
         return schema;
     }
 
-    static sponsorDto() {
-        const schema = Joi.object({
-            userId: Joi.number().required(),
-            organisationName: Joi.string().required(),
-            description: Joi.string().optional(),
-            logoUrl: Joi.string().required(),
-        });
 
-        return schema;
-    }
 
     static paiementDto() {
         const schema = Joi.object({

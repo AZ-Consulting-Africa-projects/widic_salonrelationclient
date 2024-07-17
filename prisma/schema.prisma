@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,11 +9,11 @@ datasource db {
 }
 
 model Participant {
-  id Int @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   firstName String
-  lastName String
-  email String
-  phone Int
+  lastName  String
+  email     String
+  phone     Int
   reference String
   capture   String
   createdAt DateTime @default(now())
@@ -35,7 +34,6 @@ model User {
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
   provider    Provider[]
-  sponsors    Sponsor[]
 }
 
 model Provider {
@@ -51,20 +49,27 @@ model Provider {
 
 model Sponsor {
   id               Int      @id @default(autoincrement())
-  userId           Int
+  firstName        String
+  lastName         String
   organisationName String
-  description      String
   logoUrl          String
+  captureUrl       String
+  email            String
+  phone            Int
+  reference        String
+  presentation     String
+  domaine          String
+  isVisible        Boolean  @default(true)
+  isActivated      Boolean  @default(true)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
-  user             User     @relation(fields: [userId], references: [id])
 }
 
 model Paiement {
   id        Int            @id @default(autoincrement())
   userId    Int
   amount    Float
-  status    PaiementStatus 
+  status    PaiementStatus
   createdAt DateTime       @default(now())
   updatedAt DateTime       @updatedAt
 }
